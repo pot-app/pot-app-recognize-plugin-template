@@ -15,6 +15,7 @@
 
 - `id`：插件唯一 id，必须以`[plugin]`开头，例如 `[plugin].com.pot-app.ocrspace`
 - `display`: 插件显示名称，例如 `Lingva`
+- `icon`: 插件图标，填写当前目录下的图标名称，例如 `icon.png`
 - `needs`: 插件依赖，一个数组，每个依赖为一个对象，包含以下字段：
   - `key`: 依赖 key，对应该项依赖在配置文件中的名称，例如 `apikey`
   - `display`: 依赖显示名称，对应用户显示的名称，例如 `API Key`
