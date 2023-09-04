@@ -11,7 +11,10 @@ pub fn recognize(
 ) -> Result<String, Box<dyn Error>> {
     let client = reqwest::blocking::ClientBuilder::new().build()?;
 
-    let apikey = needs["apikey"].clone();
+    let apikey = match needs.get("apikey") {
+        Some(apikey) => apikey.to_string(),
+        None => return Err("apikey not found".into()),
+    };
 
     let base64 = format!("data:image/png;base64,{}", base64);
     let mut form_data = HashMap::new();
