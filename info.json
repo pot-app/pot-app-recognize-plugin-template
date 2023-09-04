@@ -1,6 +1,7 @@
 {
   "id": "[plugin].com.pot-app.ocrspace",
   "plugin_type": "recognize",
+  "icon": "icon.png",
   "display": "OCR Space",
   "needs": [{ "key": "apikey", "display": "Api Key" }],
   "language": {
