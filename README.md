@@ -1,5 +1,7 @@
 # Pot-App 文字识别插件模板仓库 (以 [OCR Space](https://ocr.space/) 为例)
 
+### [English](./README_EN.md) | 简体中文
+
 ### 此仓库为模板仓库，编写插件时可以直接由此仓库创建插件仓库
 
 ## 插件编写指南
@@ -25,6 +27,23 @@
 ### 3. 插件编写/编译
 
 编辑 `src/lib.rs` 实现 `recognize` 函数
+
+#### Input parameters
+
+```rust
+    base64: &str, // 图像 Base64
+    lang: &str, // 语言代码
+    needs: HashMap<String, String>, // 插件需要的其他配置信息,由info.json定义
+```
+
+#### Return value
+
+```rust
+// 返回用Value包裹的String
+  return Ok(Value::String(result));
+```
+
+#### 测试/编译
 
 ```bash
 cargo test --package plugin --lib -- tests --nocapture # 运行测试用例
